@@ -1,0 +1,1 @@
+json.partial! "admin/basic_barrage", collection: @barrages, as: :basic_barrage

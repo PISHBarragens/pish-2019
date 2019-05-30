@@ -1,0 +1,1 @@
+json.partial! 'admin/barrages/basic_barrage', basic_barrage: @barrage
