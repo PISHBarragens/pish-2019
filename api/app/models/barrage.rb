@@ -14,7 +14,12 @@ class Barrage < ApplicationRecord
   scope :search, -> (address) {
   self.within(5, :units => :kms, :origin => [address.lat, address.lng]).first
   }
-   
+
+  def self.connect_cloud_mqtt
+    self.get_mqtt_data(Barrage.first, "umidade")
+    # self.get_mqtt_data(Barrage.first, "vibracao")
+  end
+
   def self.get_mqtt_data(barrage, nivel)
     uri =  URI.parse 'https://api.cloudmqtt.com/'
     conn_opts = {

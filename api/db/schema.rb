@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 2019_05_29_135715) do
 
   create_table "barrage_nivels", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "barrage_id"
-    t.float "moisture"
-    t.float "vibration"
+    t.float "moisture", default: 0.0
+    t.float "vibration", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"

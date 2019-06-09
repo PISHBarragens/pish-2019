@@ -1,1 +1,1 @@
-json.partial! "admin/barrage", barrage: @barrage
+json.partial! "admin/barrages/barrage", barrage: @barrage

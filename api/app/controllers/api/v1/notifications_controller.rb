@@ -1,4 +1,4 @@
-class Api::V1::NotificationsController < API::V1::BaseController
+class Api::V1::NotificationsController < Api::V1::BaseController
   before_action :authenticate_user!
   before_action :set_notification, only:[:show]
 
