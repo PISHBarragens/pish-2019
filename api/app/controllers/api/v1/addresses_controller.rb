@@ -3,10 +3,18 @@ class Api::V1::AddressesController < Api::V1::BaseController
   before_action :set_address, only:[:destroy, :show, :update, :get_close_barrage]
 
   def index
-    @address = current_user.addrerss
+    @addresses = current_user.addresses
   end
 
   def create
+    @address = Address.new(address_params)
+    @address.user_id = @current_user
+    
+    if @address.save
+      render json: {message: "Address updated success"},status: 200
+    else
+      render json: {errors: @address.errors.full_messages},status: 422
+    end
   end
 
   def update

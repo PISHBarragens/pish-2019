@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       # models auth
-      resources :addresses,only:[:update,:show]
+      resources :addresses
       get 'addresses/:id/get_close_barrage' => 'addresses#get_close_barrage'
+      resources :notifications
       resources :users, except: [:edit, :new, :index, :destroy], shallow: true do
         member do
           put :password
