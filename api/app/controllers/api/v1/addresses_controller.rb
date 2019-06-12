@@ -33,7 +33,7 @@ class Api::V1::AddressesController < Api::V1::BaseController
   end
 
   def get_close_barrage
-    @barrage = Barrage.search(@address)
+    @barrage = Barrage.search(@address).first
   end
 
   private
