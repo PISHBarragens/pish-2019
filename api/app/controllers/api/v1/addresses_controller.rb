@@ -8,7 +8,7 @@ class Api::V1::AddressesController < Api::V1::BaseController
 
   def create
     @address = Address.new(address_params)
-    @address.user_id = @current_user
+    @address.user_id = current_user.id
     
     if @address.save
       render json: {message: "Address updated success"},status: 200
