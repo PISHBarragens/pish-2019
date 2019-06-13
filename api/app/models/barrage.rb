@@ -42,10 +42,10 @@ class Barrage < ApplicationRecord
           case nivel
           when "umidade"
             b.moisture = message
-            if message.to_i >= 50
+            if message.to_i >= 20
               users = User.get_near_users(barrage.lat, barrage.lng)
               users.each do |user|
-                if user.notifications.last.created_at.to_date != (DateTime.now + 3.hours).to_date
+                if (user.notifications.last.created_at.to_date != (DateTime.now + 3.hours).to_date) || user.notifications.empty?
                   Notification.send_notifications(user, 1)
                 end
               end
