@@ -45,7 +45,7 @@ class Barrage < ApplicationRecord
             if message.to_i >= 20
               users = User.get_near_users(barrage.lat, barrage.lng)
               users.each do |user|
-                if (user.notifications.last.created_at.to_date != (DateTime.now + 3.hours).to_date) || user.notifications.empty?
+                if user.notifications.empty? || (user.notifications.any? && user.notifications.last.created_at.to_date != (DateTime.now + 3.hours).to_date)
                   Notification.send_notifications(user, 1)
                 end
               end
