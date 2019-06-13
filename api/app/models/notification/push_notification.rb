@@ -2,9 +2,8 @@ class Notification
 	class PushNotification
 
 		def self.push(notification)
-
       if notification.user.authentications.last.metadata[:device_os]
-        case notification.user.device[:os]
+        case notification.user.authentications.last.metadata[:device_os].to_s
         when "android"
           send_fcm_push(notification, notification.user.authentications.last.metadata[:device_id])
         when "ios"
@@ -30,13 +29,12 @@ class Notification
 
 			def self.send_fcm_push(notification, device_id)
 				options = {
-					data: {
-						id: notification.id,
-						alert: notification.title
+					notification: {
+						title: "Alerta Barragem",
+						body: "A barragem está com niveis elevados !!"
 					}
 				}
-
-				FCM_PUSHER.send([device_id], options)
+				FCM_SENDER.send([device_id], options)
 			end
 
 	end

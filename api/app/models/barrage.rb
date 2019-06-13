@@ -12,7 +12,7 @@ class Barrage < ApplicationRecord
                    :lng_column_name => :lng
 
   scope :search, -> (address) {
-  self.within(5, :units => :kms, :origin => [address.lat, address.lng]).first
+    self.within(5, :units => :kms, :origin => [address.lat, address.lng]).first
   }
 
   def self.connect_cloud_mqtt
@@ -39,6 +39,14 @@ class Barrage < ApplicationRecord
           case nivel
           when "umidade"
             b.moisture = message
+            if message >= 50
+              users = User.get_near_users(barrage.lat, barrage.lng)
+              users.each do |user|
+                if user.notifications.last.created_at.to_date != (DateTime.now + 3.hours).to_date
+                  Notification.send_notifications(user, 1)
+                end
+              end
+            end
           else
             b.vibration = message
           end
