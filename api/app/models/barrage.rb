@@ -16,8 +16,11 @@ class Barrage < ApplicationRecord
   }
 
   def self.connect_cloud_mqtt
-    self.get_mqtt_data(Barrage.first, "umidade")
-    # self.get_mqtt_data(Barrage.first, "vibracao")
+    while true do
+      self.get_mqtt_data(Barrage.first, "umidade")
+      # self.get_mqtt_data(Barrage.first, "vibracao")
+      sleep 5
+    end
   end
 
   def self.get_mqtt_data(barrage, nivel)
