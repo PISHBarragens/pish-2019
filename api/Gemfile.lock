@@ -54,6 +54,7 @@ GEM
       io-like (~> 0.3.0)
     arel (9.0.0)
     bcrypt (3.1.12)
+    bcrypt (3.1.12-x64-mingw32)
     bindex (0.7.0)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
@@ -94,11 +95,13 @@ GEM
       mqtt (>= 0.3.0)
     erubi (1.8.0)
     eventmachine (1.2.7)
+    eventmachine (1.2.7-x64-mingw32)
     execjs (2.7.0)
     fcm (0.0.2)
       httparty
       json
     ffi (1.10.0)
+    ffi (1.10.0-x64-mingw32)
     geokit (1.11.0)
     geokit-rails (2.3.0)
       geokit (~> 1.5)
@@ -135,11 +138,15 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     msgpack (1.2.10)
+    msgpack (1.2.10-x64-mingw32)
     multi_json (1.13.1)
     multi_xml (0.6.0)
     mysql2 (0.5.2)
+    mysql2 (0.5.2-x64-mingw32)
     nio4r (2.3.1)
     nokogiri (1.10.3)
+      mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.3-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     paranoia (2.4.2)
@@ -220,6 +227,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2019.1)
+      tzinfo (>= 1.0.0)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
     warden (1.2.8)
@@ -237,6 +246,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
@@ -268,7 +278,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.5.0p0
+   ruby 2.5.5p157
 
 BUNDLED WITH
    1.16.1

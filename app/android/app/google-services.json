@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "486677291045",
+    "firebase_url": "https://pish-barragens.firebaseio.com",
+    "project_id": "pish-barragens",
+    "storage_bucket": "pish-barragens.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486677291045:android:6f9b857bd20411a1",
+        "android_client_info": {
+          "package_name": "com.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "486677291045-iervjopkjan7rm7l2c95fetq5lcsat2t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app",
+            "certificate_hash": "7efa466313d86621b7464d888929eab09add2cf5"
+          }
+        },
+        {
+          "client_id": "486677291045-hsvb7cqk2blve85m22igee5a931qru79.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWrJY4mM5tm2fDxfnQsB9L-dBAsHaICl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "486677291045-hsvb7cqk2blve85m22igee5a931qru79.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
